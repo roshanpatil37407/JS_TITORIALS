@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js time </title>
+</head>
+<body>
+    <div class="con" >
+      time now this <span id="time"></span>
+    </div>
+    <script>
+      console.log("this new container");
+
+      function raj(name ,text){
+        console.log("good mornong" + name +"" +text);
+      }
+     // setTimeout(raj,3000," roshan ","take care");
+    
+
+     // timeout=setTimeout(raj,3000," roshan ","take care");
+     //console.log(timeout);
+     //clearTimeout(timeout);
+      
+      //setInterval(raj,100,"roshan","welcome");
+      
+     //intervalid= setInterval(raj,100,"roshan","welcome");
+     //clearInterval(intervalid);
+
+     function display(){
+        time=new Date();
+        console.log(time)
+        document.getElementById('time').innerHTML=time;
+     }
+     setInterval(display, 1000);
+      </script>
+</body>
+</html>

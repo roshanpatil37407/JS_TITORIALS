@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="btn" placeholder="write">
+        <div class="output">
+         
+            <p class="kyepress">kyepress</p>
+            <p class="kyeout">kye code</p>
+            <p class="char">char</p>
+            <p class="event">event</p>
+        </div>
+
+    </div>
+
+    <script>
+
+const handlekeypress=(event)=>{
+    console.log(event);
+    console.log("key pressed:", event.key);
+   
+    console.log("key code:", event.code);
+   
+    console.log("event type:", event.type);
+
+
+    document.querySelector(".kyepress").textContent = `key pressed : ${ event.key}`;
+
+    document.querySelector(".kyeout").textContent = `key code : ${ event.code}`;
+    document.querySelector(".char").textContent = `char code : ${ event.key.charCodeAt(0)}`;
+    document.querySelector(".event").textContent = `key type : ${ event.type}`;
+   
+};
+
+
+        var btn=document.getElementById("btn");
+        btn.addEventListener('keyup', handlekeypress);
+    </script>
+</body>
+</html>

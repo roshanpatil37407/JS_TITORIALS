@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="btn" placeholder="write" name="username" autocomplete="off">
+        <div class="output">
+         
+            <p class="kyepress">input type</p>
+            <p class="kyeout">input name </p>
+            <p class="char">input type</p>
+            <p class="event">event type </p>
+        </div>
+
+    </div>
+
+    <script>
+
+const handlekeypress=(event)=>{
+    console.log(event);
+    console.log("input value:", event.target.value);
+    console.log("input name:", event.target.name);
+   
+    console.log("input type:", event.inputType);
+   
+    console.log("event type:", event.type);
+
+
+    document.querySelector(".kyepress").textContent = `input value : ${ event.target.value}`;
+
+    document.querySelector(".kyeout").textContent = `input name : ${ event.target.name}`;
+    document.querySelector(".char").textContent = `input type : ${ event.inputType}`;
+    document.querySelector(".event").textContent = `event type : ${ event.type}`;
+   
+};
+
+
+        var btn=document.getElementById("btn");
+        btn.addEventListener('input', handlekeypress);
+    </script>
+</body>
+</html>

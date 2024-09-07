@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Boxes with CSS</title>
+    <style>
+        /* Styling the section to center everything */
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full height to center the boxes */
+            background-color: #f0f0f0; /* Light background to make boxes stand out */
+        }
+  
+        /* Outer box styling */
+        #outer {
+            background-color: lightcoral;
+            padding: 30px;
+            width: 420px;
+            /* height: 420px; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+  
+        /* Middle box styling */
+        #middle {
+            background-color: lightseagreen;
+            padding: 20px;
+            width: 320px;
+            /* height: 320px; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+  
+        /* Inner box styling */
+        #inner {
+            background-color: lightblue;
+            padding: 15px;
+            width: 220px;
+            /* height: 220px; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+  
+        /* Hover effects for all boxes */
+        #outer:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+  
+        #middle:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+  
+        #inner:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+      </style>
+</head>
+<body>
+    <section>
+        <div id="outer">outer
+            <div id="middle">middle
+                <div id="inner">inner</div>
+            </div>
+        </div>
+    </section>
+    <script>
+        const callOuter = (event) =>{
+            console.table([
+                {
+                    Description:"I am outer",
+                    Target: event.target,
+                    CurrentTarget: event.currentTarget,
+                }
+            ]);
+        };
+
+        const callMiddle = (event) =>{
+            console.table([
+                {
+                    Description:"I am middle",
+                    Target: event.target,
+                    CurrentTarget: event.currentTarget,
+                }
+            ]);
+            event.stopPropagation();
+        };
+
+        const callInner = (event) =>{
+            console.table([
+                {
+                    Description:"I am inner",
+                    Target: event.target,
+                    CurrentTarget: event.currentTarget,
+                }
+                
+            ]);
+            event.stopPropagation();
+        };
+
+        document.getElementById("outer").addEventListener('click', callOuter);
+        document.getElementById("middle").addEventListener('click', callMiddle);
+        document.getElementById("inner").addEventListener('click', callInner);
+    </script>
+</body>
+</html>

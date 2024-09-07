@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popular Programming Languages</title>
+    <style>
+   
+        p {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            color: #333;
+            font-size: 24px;
+        }
+        #list {
+            display: flex; 
+            justify-content: center;
+            padding: 0;
+            list-style: none; 
+        }
+
+      
+        #list li {
+            padding: 10px 20px;
+            margin: 5px;
+            border: 2px solid #ccc; 
+            border-radius: 10px; 
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover */
+        }
+
+        /* Add emoji before each list item */
+        #list li:nth-child(1)::before {
+            content: "🌐"; /* HTML emoji */
+            margin-right: 10px;
+        }
+
+        #list li:nth-child(2)::before {
+            content: "🎨"; /* CSS emoji */
+            margin-right: 10px;
+        }
+
+        #list li:nth-child(3)::before {
+            content: "⚡"; /* JS emoji */
+            margin-right: 10px;
+        }
+
+        #list li:nth-child(4)::before {
+            content: "⚛️"; /* React emoji */
+            margin-right: 10px;
+        }
+
+        /* Hover effect for list items */
+        #list li:hover {
+            background-color: #f0f0f0; /* Change background color on hover */
+            transform: scale(1.1); /* Slightly enlarge the item */
+        }
+
+        /* Styling for the selected value */
+        #listValue {
+            margin-top: 20px;
+            font-size: 20px;
+            text-align: center;
+            color: #333;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <p>Which is the most popular programming language?</p><br>
+    <ul id="list">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JS</li>
+        <li>REACT</li>
+    </ul>
+    <p id="listValue"></p>
+
+    <script>
+     const getDetails = (event) => {
+        const getListDetails = event.target;
+
+    
+        getListDetails.style.transform = "rotateY(360deg)";
+        
+       
+        setTimeout(() => {
+            getListDetails.style.transform = "none"; 
+        }, 500);
+
+        document.getElementById("listValue").innerText = `My favorite programming language is: ${getListDetails.innerText}`;
+     }
+    
+     document.getElementById("list").addEventListener('click', getDetails);
+    </script>
+</body>
+</html>

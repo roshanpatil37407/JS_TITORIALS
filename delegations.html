@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Style for the main section to align items in rows */
+        .main {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px; /* Space between boxes */
+            justify-content: center; /* Center the boxes horizontally */
+        }
+
+        /* Style for each element box */
+        .element {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f0f0;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover */
+        }
+
+        /* Hover effect for the element boxes */
+        .element:hover {
+            background-image: linear-gradient(to right, rgb(92, 145, 199), rgb(60, 179, 113), rgb(30, 144, 255));
+
+            transform: scale(1.05); /* Slightly enlarge the box */
+        }
+    </style>
+</head>
+<body>
+    <h1>Event of Delegation</h1>
+    <section class="main"></section>
+    <script>
+        const createElement = (symbol, no, name) => {
+            const element = document.createElement("div");
+            element.classList.add("element");
+            element.innerHTML = symbol;
+            element.setAttribute("atomic-number", no);
+            element.setAttribute("element-name", name);
+            return element;
+        }
+
+        const handel = (event) => {
+            const target = event.target;
+            if (target.classList.contains("element")) {
+                const atomicNumber = target.getAttribute("atomic-number");
+                const elementName = target.getAttribute("element-name");
+                alert(`Atomic Number: ${atomicNumber}\nElement Name: ${elementName}`);
+            }
+        }
+
+        function fun() {
+            const main = document.querySelector(".main");
+            for (let i = 0; i <= 50; i++) {
+                const element = createElement(`Ele${i}`, i, `Element${i}`);
+                main.append(element);
+            }
+            main.addEventListener('click', handel);
+        }
+
+        fun();
+    </script>
+</body>
+</html>

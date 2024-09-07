@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>date & times</title>
+</head>
+<body>
+    <div class="con">
+        this is a container
+    </div>
+    <script>
+        let now= new Date();
+            console.log(now);
+        
+       
+
+        let now1= new Date(10000);
+        console.log(now1);
+
+        //let newdate=new Date("2023-11-12");
+        //console.log(newdate);
+
+        let newdate=new Date(2030,6,8,9,8,7);
+        console.log(newdate);
+
+       
+        
+
+        let mn= newdate.getFullYear();
+        console.log("this year is",mn);
+
+        let dt= newdate.getDate();
+        console.log("this year is",dt);
+
+        let ti= newdate.getMonth();
+        console.log("this year is",ti);
+
+        let ms= newdate.getHours();
+        console.log("this year is",ms);
+
+    </script>
+</body>
+</html>

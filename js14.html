@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #btn{
+        padding:10px  14px;
+        color: red;
+        background-color: yellow;
+        border: 2px solid pink;
+        font-weight: bold;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+</style>
+<body>
+    <div class="con">
+        <h1>
+            this is my heading
+        </h1>
+        <p id="para">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione tenetur provident amet? Beatae atque quod dolorem ducimus nulla, laborum illum eligendi perspiciatis nemo recusandae, eos illo quam, quis voluptatem est!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas illo minima, sint explicabo quo eos quam repudiandae itaque tempora velit, dolor asperiores facilis aperiam porro ea sit, corporis aspernatur animi!
+        </p>
+
+    </div>
+    <button id="btn" onclick="hide()">show/hide</button>
+    <script>
+        let  para=document.getElementById('para');
+        para.addEventListener('mouseover',function run(){
+            alert('moves over');
+        });
+
+       
+        para.addEventListener('mouseout',function run(){
+            alert('moves outside');
+        });
+        function hide(){
+           let  btn=document.getElementById('btn');
+           let  para=document.getElementById('para');
+           if(para.style.display !='none')
+           {
+            para.style.display='none';
+           }
+           else{
+            para.style.display='block';
+           }
+        }
+    </script>
+</body>
+</html>

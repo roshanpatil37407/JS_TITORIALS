@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="hoverDiv" style="width:100px; height:100px; background-color:lightblue;">Hover over me</div>
+
+    <div id="11" style="width:100px; height:100px; background-color:lightblue; margin: 20px;">Hover over me</div>
+    <div id="2" style="width:100px; height:100px; background-color:lightblue;">Hover over me</div>
+    <div id="3" style="width:100px; height:100px; background-color:lightblue;">Hover over me</div>
+
+   
+<button id="1">submit</button>
+
+<script>
+document.getElementById('hoverDiv').addEventListener('mouseover', function() {
+    this.style.backgroundColor = 'lightgreen';
+});
+// document.getElementById('btn1').addEventListener('mouseout', function() {
+//     this.style.backgroundColor = 'lightgreen';
+// });
+// document.getElementById('btn2').addEventListener('mousedown', function() {
+//     this.style.backgroundColor = 'lightgreen';
+
+
+document.getElementById('1').addEventListener('mousedown', function() {
+    this.style.backgroundColor = 'yellow';
+});
+document.getElementById('2').addEventListener('mouseup', function() {
+    this.style.backgroundColor = 'green';
+});
+document.getElementById('3').addEventListener('mouseout', function() {
+    this.style.backgroundColor = 'pink';
+});
+
+
+</script>
+
+</body>
+</html>
